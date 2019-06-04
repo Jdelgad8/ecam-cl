@@ -1,0 +1,23 @@
+.Related {
+  padding-left: 10px;
+  padding-right: 10px;
+  width: 200px;
+  height: auto;
+  background-color: #84c03f;
+  display: flex;
+  flex-direction: column;
+  vertical-align: center;
+}
+.Related-title {
+  text-align: center;
+  color: white;
+}
+.Related-image {
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 160px;
+  height: 160px;
+  margin: 20px auto;
+}

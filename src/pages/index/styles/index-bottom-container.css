@@ -1,0 +1,9 @@
+.Index-bottom-Container {
+  width: 100%;
+  height: calc(100vh - 60px);
+  display: flex;
+  vertical-align: center;
+  justify-content: center;
+  flex-direction: column;
+  
+}

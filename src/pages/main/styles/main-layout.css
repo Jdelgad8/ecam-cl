@@ -1,0 +1,9 @@
+body {
+  margin: 0;
+  font-family: Arial;
+}
+.MainLayout {
+  display: flex;
+  margin: 0 auto;
+  min-height: 100vh;
+}

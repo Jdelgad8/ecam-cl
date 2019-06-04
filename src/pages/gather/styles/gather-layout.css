@@ -1,0 +1,10 @@
+.gather-layout{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  background-image: url("../../../images/covers/gather.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}

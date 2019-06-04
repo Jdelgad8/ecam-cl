@@ -1,0 +1,4 @@
+.Vertical {
+  display: flex;
+  flex-direction: column;
+}

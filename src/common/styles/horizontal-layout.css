@@ -1,0 +1,4 @@
+.Horizontal {
+  display: flex;
+  flex-direction: row;
+}
