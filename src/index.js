@@ -1,30 +1,29 @@
-import { InMemoryCache } from 'apollo-cache-inmemory';
-import { ApolloClient } from 'apollo-client';
-import { ApolloLink } from 'apollo-link';
-import { onError } from 'apollo-link-error';
-import { HttpLink } from 'apollo-link-http';
-import React from 'react';
-import { ApolloProvider } from 'react-apollo';
-import { render } from 'react-dom';
-import { BrowserRouter, Route } from 'react-router-dom';
-import ActividadesEconomicas from './pages/actividades-economicas/containers/actividades-economicas';
-import Acueductos from './pages/acueductos/containers/acueductos';
-import Comunicaciones from './pages/comunicaciones/containers/comunicaciones';
-import Educacion from './pages/educacion/containers/educacion';
-import Gather from './pages/gather/containers/encuesta';
-import Impactos from './pages/impactos/containers/impactos';
-import Index from './pages/index/containers/index';
-import Main from './pages/main/containers/main';
-import RecursoSuelo from './pages/recurso-suelo/containers/recurso-suelo';
-import Resultados from './pages/resultados/containers/resultados';
-import Salud from './pages/salud/containers/salud';
-import ServiciosBasicos from './pages/servicios-basicos/containers/servicios-basicos';
-import Tecnologia from './pages/tecnologia/containers/tecnologia';
-import Vias from './pages/vias/containers/vias';
-import Vivienda from './pages/vivienda/containers/vivienda';
+import { InMemoryCache } from "apollo-cache-inmemory";
+import { ApolloClient } from "apollo-client";
+import { ApolloLink } from "apollo-link";
+import { onError } from "apollo-link-error";
+import { HttpLink } from "apollo-link-http";
+import React from "react";
+import { ApolloProvider } from "react-apollo";
+import { render } from "react-dom";
+import { BrowserRouter, Route } from "react-router-dom";
+import ActividadesEconomicas from "./pages/actividades-economicas/containers/actividades-economicas";
+import Acueductos from "./pages/acueductos/containers/acueductos";
+import Comunicaciones from "./pages/comunicaciones/containers/comunicaciones";
+import Educacion from "./pages/educacion/containers/educacion";
+import Gather from "./pages/gather/containers/encuesta";
+import Impactos from "./pages/impactos/containers/impactos";
+import Index from "./pages/index/containers/index";
+import Main from "./pages/main/containers/main";
+import RecursoSuelo from "./pages/recurso-suelo/containers/recurso-suelo";
+import Resultados from "./pages/resultados/containers/resultados";
+import Salud from "./pages/salud/containers/salud";
+import ServiciosBasicos from "./pages/servicios-basicos/containers/servicios-basicos";
+import Tecnologia from "./pages/tecnologia/containers/tecnologia";
+import Vias from "./pages/vias/containers/vias";
+import Vivienda from "./pages/vivienda/containers/vivienda";
 
-
-const index = document.getElementById('index');
+const index = document.getElementById("index");
 
 const client = new ApolloClient({
   link: ApolloLink.from([
@@ -32,20 +31,20 @@ const client = new ApolloClient({
       if (graphQLErrors)
         graphQLErrors.map(({ message, locations, path }) =>
           console.log(
-            `[GraphQL error]: Message: ${message}, Location: ${locations}, Path: ${path}`,
-          ),
+            `[GraphQL error]: Message: ${message}, Location: ${locations}, Path: ${path}`
+          )
         );
       if (networkError) console.log(`[Network error]: ${networkError}`);
     }),
     new HttpLink({
-      uri: 'http://3.17.152.188:5000/graphql',
+      uri: "http://localhost:5000/graphql",
       /* credentials: 'same-origin' */
-    })
+    }),
   ]),
-  cache: new InMemoryCache()
+  cache: new InMemoryCache(),
 });
 
-render((
+render(
   <ApolloProvider client={client}>
     <BrowserRouter>
       <div>
@@ -64,9 +63,13 @@ render((
         <Route path="/servicios-basicos" component={ServiciosBasicos} />
         <Route path="/vivienda" component={Vivienda} />
         <Route path="/salud" component={Salud} />
-        <Route path="/actividades-economicas" component={ActividadesEconomicas} />
+        <Route
+          path="/actividades-economicas"
+          component={ActividadesEconomicas}
+        />
         <Route path="/resultados" component={Resultados} />
       </div>
     </BrowserRouter>
-  </ApolloProvider>
-), index);
+  </ApolloProvider>,
+  index
+);
