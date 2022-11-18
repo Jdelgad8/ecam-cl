@@ -23,7 +23,7 @@
     "react-apollo": "^2.5.2",
     "react-dom": "^16.8.6",
     "react-router-dom": "^4.3.1",
-    "react-scripts": "3.0.1",
+    "react-scripts": "5.0.1",
     "react-toolbox": "^2.0.0-beta.13",
     "rebuild": "^0.1.2",
     "sass-spec": "^3.5.4-1",
